@@ -1,6 +1,6 @@
 package Controllers;
 
-import Views.View;
+import Views.Home;
 
 public class Controller {
 
@@ -8,9 +8,9 @@ public class Controller {
     public Controller(){
 
 
-        View view = new View();
+        Home home = new Home();
 
-        view.setVisible(true);
+        home.setVisible(true);
 
 
     }
