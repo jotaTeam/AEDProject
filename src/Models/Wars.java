@@ -1,16 +1,16 @@
 package Models;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.sql.Date;
 
-public class Wars {
+public class Wars implements Serializable {
 
-
-    private String name;
     private int id;
+    private String name;
     private Date initDate;
     private Date endDate;
 
-    public Wars(String name, int id, Date initDate, Date endDate) {
+    public Wars( int id, String name, Date initDate, Date endDate) {
         this.name = name;
         this.id = id;
         this.initDate = initDate;
