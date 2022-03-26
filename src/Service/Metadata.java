@@ -10,6 +10,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Metadata extends AbstractTableModel {
 
@@ -66,7 +67,7 @@ public class Metadata extends AbstractTableModel {
     @Override
     public String getColumnName(int column) {
         try {
-            return md.getColumnName(column+1);
+            return md.getColumnName(column+1).toUpperCase(Locale.ROOT);
         } catch (SQLException e) {
             e.printStackTrace();
         }
