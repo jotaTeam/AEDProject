@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class Home extends JFrame{
     private JPanel panel1;
+    private JLabel accessBtn;
 
 
     public Home(){
@@ -19,4 +20,11 @@ public class Home extends JFrame{
 
     }
 
+    public JLabel getAccessBtn() {
+        return accessBtn;
+    }
+
+    public void setAccessBtn(JLabel accessBtn) {
+        this.accessBtn = accessBtn;
+    }
 }

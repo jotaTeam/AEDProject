@@ -1,9 +1,15 @@
 package Service;
 
+import Service.database.DBConnection;
+import com.mysql.cj.jdbc.DatabaseMetaData;
+
 import javax.swing.table.AbstractTableModel;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Metadata extends AbstractTableModel {
 
@@ -66,5 +72,38 @@ public class Metadata extends AbstractTableModel {
         }
 
         return null;
+    }
+
+    public static List<String> getTableName(){
+
+        List<String> tableName = new ArrayList<>();
+        String TABLE_NAME = "TABLE_NAME";
+        String TABLE_CAT = "TABLE_CAT";
+        String[] TABLE_TYPES = {"TABLE"};
+        Connection con = DBConnection.getConnection();
+
+        try {
+            DatabaseMetaData dbmd = (DatabaseMetaData) con.getMetaData();
+
+            ResultSet rs = dbmd.getTables(null, null, null, TABLE_TYPES);
+
+            while (rs.next()){
+
+                String bbdd = rs.getString(TABLE_CAT);
+
+
+                if ( bbdd.equals("guerritas")){
+
+                    tableName.add(rs.getString(TABLE_NAME));
+                }
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return tableName;
+
     }
 }
