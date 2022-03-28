@@ -6,10 +6,10 @@ public class Sides implements Serializable {
 
     private int id;
     private String sideName;
-    private boolean isWinner;
+    private int isWinner;
     private int idWar;
 
-    public Sides(int id, String sideName, boolean isWinner, int idWar) {
+    public Sides(int id, String sideName, int isWinner, int idWar) {
         this.id = id;
         this.sideName = sideName;
         this.isWinner = isWinner;
@@ -32,11 +32,11 @@ public class Sides implements Serializable {
         this.sideName = sideName;
     }
 
-    public boolean isWinner() {
+    public int isWinner() {
         return isWinner;
     }
 
-    public void setWinner(boolean winner) {
+    public void setWinner(int winner) {
         isWinner = winner;
     }
 

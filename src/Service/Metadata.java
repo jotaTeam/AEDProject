@@ -1,13 +1,10 @@
 package Service;
 
 import Service.database.DBConnection;
-import com.mysql.cj.jdbc.DatabaseMetaData;
+
 
 import javax.swing.table.AbstractTableModel;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
