@@ -92,11 +92,16 @@ public class WarsRepository {
 
         boolean done = false;
 
+        System.out.println(war.toString());
+
         int i = srv.update(war.getId(),
                 tableName,
-                md.getColumnName(1), war.getName(),
-                md.getColumnName(2), war.getInitDate().toString(),
-                md.getColumnName(3), war.getEndDate().toString());
+                md.getColumnName(1),
+                md.getColumnName(2),
+                md.getColumnName(3),
+                war.getName(),
+                war.getInitDate().toString(),
+                war.getEndDate().toString());
 
         if (i < 0) done = true;
 

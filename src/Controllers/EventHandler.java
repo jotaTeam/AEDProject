@@ -1,9 +1,6 @@
 package Controllers;
 
-import Controllers.Events.AccessBtnEvent;
-import Controllers.Events.CreateBtnEvent;
-import Controllers.Events.CreateWarEvent;
-import Controllers.Events.TableBtnEvent;
+import Controllers.Events.*;
 import Views.Content;
 import Views.Home;
 import Views.Menu;
@@ -31,6 +28,8 @@ public class EventHandler {
         JTable table = content.getContentTable();
 
         create.addActionListener(new CreateBtnEvent( controller, tableName));
+        update.addActionListener(new UpdateBtnEvent(controller, tableName, table));
+        delete.addActionListener(new DeleteBtnEvent(controller, tableName, table));
     }
 
     public static void AddEvent(WarsFormDlg wfd){
@@ -44,4 +43,14 @@ public class EventHandler {
 
     }
 
+        public static void AddEvent(WarsFormDlg wfd, int id){
+
+        JTextField name = wfd.getNameWarInput();
+        JTextField startDate = wfd.getStartDateInput();
+        JTextField endDate = wfd.getEndDateInput();
+        JButton okBtn = wfd.getOkWarBtn();
+
+        okBtn.addActionListener(new UpdateWarEvent(name, startDate, endDate, id));
+
+    }
 }
