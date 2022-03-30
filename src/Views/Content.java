@@ -14,8 +14,10 @@ public class Content extends JDialog {
     public Content(Frame parent, boolean modal) {
         super(parent, modal);
         setContentPane(contentPane);
-        setSize(800, 600);
+        setSize(935, 845);
         setResizable(false);
+        setLocationRelativeTo(null);
+
 
     }
 

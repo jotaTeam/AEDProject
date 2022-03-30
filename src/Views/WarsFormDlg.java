@@ -13,8 +13,10 @@ public class WarsFormDlg extends JDialog {
     public WarsFormDlg(JFrame parent, boolean modal) {
         super(parent, modal);
         setContentPane(contentPane);
-        setSize( 400, 300);
+        setSize(935, 845);
         setResizable(false);
+        setLocationRelativeTo(null);
+        
     }
 
     public JTextField getNameWarInput() {

@@ -17,8 +17,9 @@ public class Menu extends JDialog {
         setContentPane(contentPane);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setTitle("Menu");
-        setSize(200, 200);
+        setSize(280, 200);
         setResizable(false);
+        setLocationRelativeTo(null);
 
         for(String tname: tableName){
 
