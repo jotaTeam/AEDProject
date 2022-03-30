@@ -9,9 +9,9 @@ public class Content extends JDialog {
     private JButton createBtn;
     private JButton deleteBtn;
     private JButton updateBtn;
+    private JPanel idyPanel;
 
     public Content(Frame parent, boolean modal) {
-
         super(parent, modal);
         setContentPane(contentPane);
         setSize(800, 600);

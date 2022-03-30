@@ -6,12 +6,12 @@ import Views.CreatePane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CreateBtnEvent implements ActionListener {
+public class UpdateBtnEvent implements ActionListener {
 
     private Controller controller;
     String tableName;
 
-    public CreateBtnEvent(Controller controller, String tableName){
+    public UpdateBtnEvent(Controller controller, String tableName){
 
         this.controller = controller;
         this.tableName = tableName;

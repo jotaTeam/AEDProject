@@ -31,7 +31,7 @@ public class SideRepository {
 
         try {
             while (rs.next()) {
-                Sides side = new Sides(rs.getInt(1), rs.getString(2), rs.getBoolean(3), rs.getInt(4));
+                Sides side = new Sides(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4));
                 sides.add(side);
             }
         } catch (SQLException e) {
@@ -48,7 +48,7 @@ public class SideRepository {
 
         try {
             while (rs.next()) {
-                side = new Sides(rs.getInt(1), rs.getString(2), rs.getBoolean(3), rs.getInt(4));
+                side = new Sides(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4));
             }
         } catch (SQLException e) {
             e.printStackTrace();

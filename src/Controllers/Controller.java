@@ -7,11 +7,9 @@ import Service.Service;
 import Service.database.DBConnection;
 
 import Service.repositories.CountryRepository;
-import Views.Content;
-import Views.Form;
-import Views.Home;
+import Views.*;
 import Views.Menu;
-import com.mysql.cj.jdbc.DatabaseMetaData;
+
 
 import javax.swing.*;
 
@@ -54,6 +52,7 @@ public class Controller {
 
         Content content = new Content(null, true);
 
+
         fillTable(table, content);
 
         EventHandler.AddEvent(content, this, table);
@@ -83,7 +82,6 @@ public class Controller {
     private void fillTable(String table, Content content) {
 
         JTable tabla = content.getContentTable();
-
         Service srv = new Service();
 
         Metadata data = new Metadata(srv.getAll(table));
