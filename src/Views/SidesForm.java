@@ -34,6 +34,14 @@ public class SidesForm extends JDialog {
         this.sidesIsWinnerInput = sidesIsWinnerInput;
     }
 
+    public JButton getOkBtn() {
+        return okBtn;
+    }
+
+    public void setOkBtn(JButton okBtn) {
+        this.okBtn = okBtn;
+    }
+
     private void createUIComponents() {
         // TODO: place custom component creation code here
     }

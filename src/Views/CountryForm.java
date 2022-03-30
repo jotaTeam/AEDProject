@@ -24,4 +24,12 @@ public class CountryForm extends javax.swing.JDialog {
     public void setCountryTextField(JTextField countryTextField) {
         CountryTextField = countryTextField;
     }
+
+    public JButton getOkBtn() {
+        return okBtn;
+    }
+
+    public void setOkBtn(JButton okBtn) {
+        this.okBtn = okBtn;
+    }
 }

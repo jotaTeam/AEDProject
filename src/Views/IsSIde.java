@@ -33,4 +33,12 @@ public class IsSIde extends JDialog {
     public void setIsSideEndInput(JTextField isSideEndInput) {
         this.isSideEndInput = isSideEndInput;
     }
+
+    public JButton getOkBtn() {
+        return okBtn;
+    }
+
+    public void setOkBtn(JButton okBtn) {
+        this.okBtn = okBtn;
+    }
 }
