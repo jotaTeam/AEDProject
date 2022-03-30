@@ -89,15 +89,18 @@ public class IndependencePeriodRepository {
 
     }
 
-    public boolean update(IndependencePeriod ip){
+    public boolean update(IndependencePeriod ip) {
 
         boolean done = false;
 
         int i = srv.update(ip.getId(),
                 tableName,
-                md.getColumnName(1), ip.getStartDate().toString(),
-                md.getColumnName(2), ip.getEndDate().toString(),
-                md.getColumnName(3), ip.getIdCountry() + "");
+                md.getColumnName(1),
+                md.getColumnName(2),
+                md.getColumnName(3),
+                ip.getStartDate().toString(),
+                ip.getEndDate().toString(),
+                ip.getIdCountry() + "");
 
         if (i < 0) done = true;
 
@@ -106,12 +109,11 @@ public class IndependencePeriodRepository {
     }
 
 
-
-    public String[] getColumnsName(){
+    public String[] getColumnsName() {
 
         String[] columnNames = new String[4];
 
-        for(int i=0;i<columnNames.length;i++){
+        for (int i = 0; i < columnNames.length; i++) {
 
             columnNames[i] = md.getColumnName(i);
         }
@@ -119,7 +121,6 @@ public class IndependencePeriodRepository {
         return columnNames;
 
     }
-
 
 
 }

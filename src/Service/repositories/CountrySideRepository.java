@@ -91,16 +91,20 @@ public class CountrySideRepository {
 
     }
 
-    public boolean update(CountrySide cs){
+    public boolean update(CountrySide cs) {
 
         boolean done = false;
 
         int i = srv.update(cs.getId(),
                 tableName,
-                md.getColumnName(1), cs.getStartDate().toString(),
-                md.getColumnName(2), cs.getEndDate().toString(),
-                md.getColumnName(3), cs.getIdSide() + "",
-                md.getColumnName(4), cs.getIdCountry() + "");
+                md.getColumnName(1),
+                md.getColumnName(2),
+                md.getColumnName(3),
+                md.getColumnName(4),
+                cs.getStartDate().toString(),
+                cs.getEndDate().toString(),
+                cs.getIdSide() + "",
+                cs.getIdCountry() + "");
 
         if (i < 0) done = true;
 
@@ -109,12 +113,11 @@ public class CountrySideRepository {
     }
 
 
-
-    public String[] getColumnsName(){
+    public String[] getColumnsName() {
 
         String[] columnNames = new String[4];
 
-        for(int i=0;i<columnNames.length;i++){
+        for (int i = 0; i < columnNames.length; i++) {
 
             columnNames[i] = md.getColumnName(i);
         }

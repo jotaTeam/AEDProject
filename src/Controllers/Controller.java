@@ -1,27 +1,17 @@
 package Controllers;
 
-import Controllers.Events.AccessBtnEvent;
-
 import Service.Metadata;
 import Service.Service;
-import Service.database.DBConnection;
-
-import Service.repositories.CountryRepository;
+import Service.repositories.WarsRepository;
 import Views.*;
 import Views.Menu;
-
-
 import javax.swing.*;
-
-import java.awt.*;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 public class Controller {
 
     private Home home;
+    private Content content;
 
 
     public Controller() {
@@ -50,7 +40,7 @@ public class Controller {
 
     public void startContent(String table) {
 
-        Content content = new Content(null, true);
+        content = new Content(null, true);
 
 
         fillTable(table, content);
@@ -60,37 +50,54 @@ public class Controller {
         content.setVisible(true);
 
 
+    }
+
+    public void startForm(String table, int id) {
+
+        // Crear
+        if (id <= 0) {
+
+            switch (table) {
+                case "guerra":
+                    WarsFormDlg wfd = new WarsFormDlg(null, true);
+                    EventHandler.AddEvent(wfd);
+                    wfd.setVisible(true);
+                    fillTable(table, content);
+
+            }
+
+            // Modificar
+        } else {
+
+            switch (table) {
+                case "guerra":
+                    WarsFormDlg wfd = new WarsFormDlg(null, true);
+                    EventHandler.AddEvent(wfd, id);
+                    wfd.setVisible(true);
+                    fillTable(table, content);
+            }
+
+        }
 
 
     }
 
-    public void startForm(String table){
+    public void startDelete(String table, int id) {
 
-        switch (table){
+        switch (table) {
             case "guerra":
-                WarsFormDlg wfd = new WarsFormDlg(null, true);
-
-                EventHandler.AddEvent(wfd);
-
-                wfd.setVisible(true);
+                WarsRepository wr = new WarsRepository();
+                wr.delete(id);
+                fillTable(table, content);
         }
-
-
-
-
-
     }
 
     private void fillTable(String table, Content content) {
 
         JTable tabla = content.getContentTable();
         Service srv = new Service();
-
         Metadata data = new Metadata(srv.getAll(table));
-
         tabla.setModel(data);
-
-
     }
 
 

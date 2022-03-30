@@ -91,7 +91,7 @@ public class Service {
                 " SET "
                 + columnName1 + " = '" + newValue1 + "'," +
                 "" + columnName2 + " = '" + newValue2 + "'," +
-                "" + columnName3 + " = '" + newValue3 + "'," +
+                "" + columnName3 + " = '" + newValue3 + "'" +
                 " WHERE id_" + table + " = " + id + ";";
 
         int i = executeUpdate(sql);
@@ -109,7 +109,7 @@ public class Service {
                 + columnName1 + " = '" + newValue1 + "'," +
                 "" + columnName2 + " = '" + newValue2 + "'," +
                 "" + columnName3 + " = '" + newValue3 + "'," +
-                "" + columnName4 + " = '" + newValue4 + "'," +
+                "" + columnName4 + " = '" + newValue4 + "'" +
                 " WHERE id_" + table + " = " + id + ";";
 
         int i = executeUpdate(sql);

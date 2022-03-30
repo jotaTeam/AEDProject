@@ -20,7 +20,7 @@ public class CreateBtnEvent implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 //        CreatePane.create(tableName);
-        controller.startForm(tableName);
+        controller.startForm(tableName, -1);
 
 
     }

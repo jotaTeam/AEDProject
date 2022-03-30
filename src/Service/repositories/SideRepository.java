@@ -86,9 +86,12 @@ public class SideRepository {
 
         int i = srv.update(side.getId(),
                 tableName,
-                md.getColumnName(1), side.getSideName(),
-                md.getColumnName(2), side.isWinner() + "",
-                md.getColumnName(3), side.getIdWar() + "");
+                md.getColumnName(1),
+                md.getColumnName(2),
+                md.getColumnName(3),
+                side.getSideName(),
+                side.isWinner() + "",
+                side.getIdWar() + "");
 
         if (i < 0) done = true;
 
