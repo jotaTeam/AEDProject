@@ -10,12 +10,14 @@ public class Content extends JDialog {
     private JButton deleteBtn;
     private JButton updateBtn;
     private JPanel idyPanel;
+    private JTextField textField1;
 
     public Content(Frame parent, boolean modal) {
         super(parent, modal);
         setContentPane(contentPane);
-        setSize(800, 600);
+        setSize(1200, 600);
         setResizable(false);
+        setLocationRelativeTo(null);
 
     }
 

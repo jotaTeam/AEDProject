@@ -24,7 +24,8 @@ public class Menu extends JDialog {
 
             tableCombo.addItem(tname.toUpperCase(Locale.ROOT));
         }
-        setLocationRelativeTo(parent);
+
+        setLocationRelativeTo(null);
     }
 
     public JButton getTableBtn() {
