@@ -2,10 +2,12 @@ package Controllers;
 
 import Controllers.Events.AccessBtnEvent;
 import Controllers.Events.CreateBtnEvent;
+import Controllers.Events.CreateWarEvent;
 import Controllers.Events.TableBtnEvent;
 import Views.Content;
 import Views.Home;
 import Views.Menu;
+import Views.WarsFormDlg;
 
 import javax.swing.*;
 
@@ -29,6 +31,17 @@ public class EventHandler {
         JTable table = content.getContentTable();
 
         create.addActionListener(new CreateBtnEvent( controller, tableName));
+    }
+
+    public static void AddEvent(WarsFormDlg wfd){
+
+        JTextField name = wfd.getNameWarInput();
+        JTextField startDate = wfd.getStartDateInput();
+        JTextField endDate = wfd.getEndDateInput();
+        JButton okBtn = wfd.getOkWarBtn();
+
+        okBtn.addActionListener(new CreateWarEvent(name, startDate, endDate));
+
     }
 
 }

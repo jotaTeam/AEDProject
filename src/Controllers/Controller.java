@@ -66,16 +66,18 @@ public class Controller {
 
     public void startForm(String table){
 
-        Form form = new Form(null, true);
+        switch (table){
+            case "guerra":
+                WarsFormDlg wfd = new WarsFormDlg(null, true);
 
-        JPanel cp = form.getContentPane();
+                EventHandler.AddEvent(wfd);
 
-        CardLayout cl = (CardLayout) cp.getLayout();
+                wfd.setVisible(true);
+        }
 
-//        cl.first(cp);
-        cl.show(cp, "Card2");
 
-        form.setVisible(true);
+
+
 
     }
 

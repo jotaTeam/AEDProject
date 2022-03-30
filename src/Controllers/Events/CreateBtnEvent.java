@@ -19,8 +19,8 @@ public class CreateBtnEvent implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        CreatePane.create(tableName);
-        //controller.startForm(tableName);
+//        CreatePane.create(tableName);
+        controller.startForm(tableName);
 
 
     }
