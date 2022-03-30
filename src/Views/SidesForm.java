@@ -8,6 +8,7 @@ public class SidesForm extends JDialog {
     private JTextField sidesInput;
     private JTextField sidesIsWinnerInput;
     private JButton okBtn;
+    private JPanel panel1;
 
     public SidesForm(Frame parent, boolean modal) {
         super(parent, modal);
@@ -31,5 +32,17 @@ public class SidesForm extends JDialog {
 
     public void setSidesIsWinnerInput(JTextField sidesIsWinnerInput) {
         this.sidesIsWinnerInput = sidesIsWinnerInput;
+    }
+
+    public JButton getOkBtn() {
+        return okBtn;
+    }
+
+    public void setOkBtn(JButton okBtn) {
+        this.okBtn = okBtn;
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }

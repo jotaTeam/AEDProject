@@ -32,4 +32,12 @@ public class PeriodIndependence extends JDialog {
     public void setPeriodIndependenceEndInput(JTextField periodIndependenceEndInput) {
         this.periodIndependenceEndInput = periodIndependenceEndInput;
     }
+
+    public JButton getOkBtn() {
+        return okBtn;
+    }
+
+    public void setOkBtn(JButton okBtn) {
+        this.okBtn = okBtn;
+    }
 }
