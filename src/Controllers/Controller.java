@@ -5,6 +5,7 @@ import Service.Service;
 import Service.repositories.*;
 import Views.*;
 import Views.Menu;
+
 import javax.swing.*;
 import java.util.List;
 
@@ -63,26 +64,31 @@ public class Controller {
                     EventHandler.AddEvent(wfd);
                     wfd.setVisible(true);
                     fillTable(table, content);
+                    break;
                 case "bando":
                     SidesForm sides = new SidesForm(null, true);
-//                    EventHandler.;
+                    EventHandler.AddEvent(sides);
                     sides.setVisible(true);
-                    fillTable(table,content);
+                    fillTable(table, content);
+                    break;
                 case "pais":
-                    CountryForm countries = new CountryForm(null,true);
+                    CountryForm countries = new CountryForm(null, true);
                     //TODO eventHandler
                     countries.setVisible(true);
-                    fillTable(table,content);
+                    fillTable(table, content);
+                    break;
                 case "bando_pais":
                     IsSIde theSide = new IsSIde(null, true);
                     //TODO enventhandler
                     theSide.setVisible(true);
-                    fillTable(table,content);
+                    fillTable(table, content);
+                    break;
                 case "periodo_independencia":
                     PeriodIndependence independence = new PeriodIndependence(null, true);
                     //TODO eventHandler
                     independence.setVisible(true);
-                    fillTable(table,content);
+                    fillTable(table, content);
+                    break;
 
                 default:
                     System.out.println("no existe esa tabla");
@@ -98,28 +104,34 @@ public class Controller {
                     EventHandler.AddEvent(wfd, id);
                     wfd.setVisible(true);
                     fillTable(table, content);
-
-
+                    break;
                 case "bando":
                     SidesForm sides = new SidesForm(null, true);
-//                    EventHandler.;
+                    EventHandler.AddEvent(sides, id);
                     sides.setVisible(true);
-                    fillTable(table,content);
+                    fillTable(table, content);
+                    break;
+
                 case "pais":
-                    CountryForm countries = new CountryForm(null,true);
+                    CountryForm countries = new CountryForm(null, true);
                     //TODO eventHandler
                     countries.setVisible(true);
-                    fillTable(table,content);
+                    fillTable(table, content);
+                    break;
+
                 case "bando_pais":
                     IsSIde theSide = new IsSIde(null, true);
                     //TODO enventhandler
                     theSide.setVisible(true);
-                    fillTable(table,content);
+                    fillTable(table, content);
+                    break;
+
                 case "periodo_independencia":
                     PeriodIndependence independence = new PeriodIndependence(null, true);
                     //TODO eventHandler
                     independence.setVisible(true);
-                    fillTable(table,content);
+                    fillTable(table, content);
+                    break;
 
                 default:
                     System.out.println("no existe esa tabla");
@@ -137,6 +149,8 @@ public class Controller {
                 WarsRepository wr = new WarsRepository();
                 wr.delete(id);
                 fillTable(table, content);
+                break;
+
 
             case "bando":
                 SideRepository sideRepository = new SideRepository();
@@ -146,15 +160,21 @@ public class Controller {
                 CountryRepository countryRepository = new CountryRepository();
                 countryRepository.delete(id);
                 fillTable(table, content);
+                break;
+
 
             case "bando_pais":
                 CountrySideRepository countrySideRepository = new CountrySideRepository();
                 countrySideRepository.delete(id);
                 fillTable(table, content);
+                break;
+
             case "periodo_independencia":
                 IndependencePeriodRepository independencePeriodRepository = new IndependencePeriodRepository();
                 independencePeriodRepository.delete(id);
                 fillTable(table, content);
+                break;
+
             default:
                 System.out.println("no existe esa tabla");
         }
