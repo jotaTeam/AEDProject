@@ -12,12 +12,12 @@ import java.awt.event.ActionListener;
 import java.sql.Date;
 
 public class UpdateSidesEvent implements ActionListener{
-        private JTextField id;
+        private int id;
         private JTextField sideName;
-        private JTextField isWinner;
-        private JTextField idWar;
+        private int isWinner;
+        private int idWar;
 
-    public UpdateSidesEvent(JTextField id, JTextField sideName, JTextField isWinner, JTextField idWar) {
+    public UpdateSidesEvent(int id, JTextField sideName, int isWinner, int idWar) {
         this.id = id;
         this.sideName = sideName;
         this.isWinner = isWinner;
@@ -28,7 +28,7 @@ public class UpdateSidesEvent implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
-        Sides side = new Sides(0, sideName.getText(),Integer.parseInt(isWinner.getText()),0);
+        Sides side = new Sides(id, sideName.getText(),isWinner,idWar);
 
         SideRepository sideRepo = new SideRepository();
 

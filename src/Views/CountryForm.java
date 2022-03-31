@@ -6,8 +6,9 @@ import java.awt.*;
 public class CountryForm extends javax.swing.JDialog {
 
     private javax.swing.JPanel contentPane;
-    private JTextField CountryTextField;
+    private JTextField countryNameInput;
     private JButton okBtn;
+    private JTextField countryIdInput;
 
     public CountryForm(Frame parent, boolean modal) {
         super(parent, modal);
@@ -17,12 +18,20 @@ public class CountryForm extends javax.swing.JDialog {
 
     }
 
-    public JTextField getCountryTextField() {
-        return CountryTextField;
+    public JTextField getCountryIdInput() {
+        return countryIdInput;
     }
 
-    public void setCountryTextField(JTextField countryTextField) {
-        CountryTextField = countryTextField;
+    public void setCountryIdInput(JTextField countryIdInput) {
+        this.countryIdInput = countryIdInput;
+    }
+
+    public JTextField getCountryNameInput() {
+        return countryNameInput;
+    }
+
+    public void setCountryNameInput(JTextField countryNameInput) {
+        this.countryNameInput = countryNameInput;
     }
 
     public JButton getOkBtn() {
