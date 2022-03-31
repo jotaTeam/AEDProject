@@ -56,7 +56,7 @@ public class EventHandler {
         JTextField name = countryF.getCountryNameInput();
         JButton okBtn = countryF.getOkBtn();
 
-        okBtn.addActionListener(new CreateCountryEvent(name));
+        okBtn.addActionListener(new CreateCountryEvent(name, countryF));
 
     }
 
@@ -65,7 +65,7 @@ public class EventHandler {
         JTextField name = countryF.getCountryNameInput();
         JButton okBtn = countryF.getOkBtn();
 
-        okBtn.addActionListener(new UpdateCountryEvent(name, id));
+        okBtn.addActionListener(new UpdateCountryEvent(name, id, countryF));
 
     }
 
@@ -88,6 +88,52 @@ public class EventHandler {
         JButton okBtn = sidesF.getOkBtn();
 
         okBtn.addActionListener(new UpdateSidesEvent( id,name, isWinner,idWar, sidesF ));
+
+    }
+
+    public static void AddEvent(IsSIde isSide){
+        JTextField startDate = isSide.getIsSideStrartInput();
+        JTextField endDate = isSide.getIsSideEndInput();
+        JTextField idSide = isSide.getIsSideIdSide();
+        JTextField idCountry = isSide.getIsSideIdCountry();
+        JButton okBtn = isSide.getOkBtn();
+
+        okBtn.addActionListener(new CreateIsSidesEvent(startDate,endDate,idSide, idCountry, isSide));
+    }
+
+    public  static void AddEvent(IsSIde isSide, int id){
+
+        JTextField startDate = isSide.getIsSideStrartInput();
+        JTextField endDate = isSide.getIsSideEndInput();
+        JTextField idSide = isSide.getIsSideIdSide();
+        JTextField idCountry = isSide.getIsSideIdCountry();
+        JButton okBtn = isSide.getOkBtn();
+
+        okBtn.addActionListener(new UpdateCountryIsSideEvent(id, startDate, endDate, idSide, idCountry, isSide));
+    }
+
+
+    public static void AddEvent(PeriodIndependence pind){
+
+        JTextField startDate = pind.getPeriodIndependenceStartInput();
+        JTextField  endDate = pind.getPeriodIndependenceEndInput();
+        JTextField idCountry = pind.getPerInIdPaisInput();
+        JButton btnOk = pind.getOkBtn();
+
+        btnOk.addActionListener(new CreatePeriodIndependenceEvent(startDate,endDate, idCountry, pind));
+
+
+    }
+
+    public static void AddEvent(PeriodIndependence pind, int id){
+
+        JTextField startDate = pind.getPeriodIndependenceStartInput();
+        JTextField  endDate = pind.getPeriodIndependenceEndInput();
+        JTextField idCountry = pind.getPerInIdPaisInput();
+        JButton btnOk = pind.getOkBtn();
+
+        btnOk.addActionListener(new UpdatePeriodIndependenceEvent(id, startDate,endDate, idCountry, pind));
+
 
     }
 

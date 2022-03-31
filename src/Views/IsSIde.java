@@ -8,7 +8,9 @@ public class IsSIde extends JDialog {
     private JTextField isSideStrartInput;
     private JTextField isSideEndInput;
     private JButton okBtn;
-    private JButton buttonOK;
+    private JTextField isSideIdSide;
+    private JTextField isSideIdCountry;
+
 
     public IsSIde(Frame parent, boolean modal) {
         super(parent, modal);
@@ -41,5 +43,21 @@ public class IsSIde extends JDialog {
 
     public void setOkBtn(JButton okBtn) {
         this.okBtn = okBtn;
+    }
+
+    public JTextField getIsSideIdSide() {
+        return isSideIdSide;
+    }
+
+    public void setIsSideIdSide(JTextField isSideIdSide) {
+        this.isSideIdSide = isSideIdSide;
+    }
+
+    public JTextField getIsSideIdCountry() {
+        return isSideIdCountry;
+    }
+
+    public void setIsSideIdCountry(JTextField isSideIdCountry) {
+        this.isSideIdCountry = isSideIdCountry;
     }
 }
