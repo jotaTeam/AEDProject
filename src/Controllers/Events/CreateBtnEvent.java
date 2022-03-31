@@ -1,7 +1,6 @@
 package Controllers.Events;
 
 import Controllers.Controller;
-import Views.CreatePane;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

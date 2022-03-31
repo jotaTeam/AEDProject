@@ -2,37 +2,38 @@ package Controllers.Events;
 
 import javax.swing.*;
 import Models.Sides;
-import Models.Wars;
 import Service.repositories.SideRepository;
-import Service.repositories.WarsRepository;
+import Views.SidesForm;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Date;
 
 public class UpdateSidesEvent implements ActionListener{
         private int id;
         private JTextField sideName;
-        private int isWinner;
-        private int idWar;
+        private JTextField isWinner;
+        private JTextField idWar;
+        private SidesForm sidesForm;
 
-    public UpdateSidesEvent(int id, JTextField sideName, int isWinner, int idWar) {
+    public UpdateSidesEvent ( int id, JTextField sideName, JTextField isWinner, JTextField idWar, SidesForm sidesForm) {
         this.id = id;
         this.sideName = sideName;
         this.isWinner = isWinner;
         this.idWar = idWar;
+        this.sidesForm = sidesForm;
 
     }
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
-        Sides side = new Sides(id, sideName.getText(),isWinner,idWar);
+        Sides side = new Sides(id, sideName.getText(),Integer.parseInt(isWinner.getText()),Integer.parseInt(idWar.getText()));
 
         SideRepository sideRepo = new SideRepository();
 
         sideRepo.update(side);
+
+        sidesForm.dispose();
 
     }
 }

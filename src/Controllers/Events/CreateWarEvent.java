@@ -2,6 +2,7 @@ package Controllers.Events;
 
 import Models.Wars;
 import Service.repositories.WarsRepository;
+import Views.WarsFormDlg;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -13,13 +14,14 @@ public class CreateWarEvent implements ActionListener {
     private JTextField name;
     private JTextField startDate;
     private JTextField endDate;
+    private WarsFormDlg wfd;
 
-    public CreateWarEvent(JTextField name, JTextField startDate, JTextField endDate) {
+    public CreateWarEvent(JTextField name, JTextField startDate, JTextField endDate, WarsFormDlg wfd) {
         this.name = name;
 
         this.startDate = startDate;
         this.endDate = endDate;
-
+        this.wfd = wfd;
     }
 
     @Override
@@ -30,5 +32,7 @@ public class CreateWarEvent implements ActionListener {
         WarsRepository wr = new WarsRepository();
 
         wr.create(war);
+
+        wfd.dispose();
     }
 }

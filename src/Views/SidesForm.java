@@ -1,23 +1,30 @@
 package Views;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class SidesForm extends JDialog {
     private JPanel contentPane;
+    private JButton okBtn;
     private JTextField sidesInput;
     private JTextField sidesIsWinnerInput;
-    private JButton okBtn;
-    private JPanel panel1;
+    private JTextField sidesIdWarInput;
 
-    public SidesForm(Frame parent, boolean modal) {
+    public SidesForm(JFrame parent, boolean modal) {
         super(parent, modal);
         setContentPane(contentPane);
         setSize(935, 845);
         setResizable(false);
         setLocationRelativeTo(null);
 
+    }
 
+
+    public JButton getOkBtn() {
+        return okBtn;
+    }
+
+    public void setOkBtn(JButton okBtn) {
+        this.okBtn = okBtn;
     }
 
     public JTextField getSidesInput() {
@@ -36,15 +43,11 @@ public class SidesForm extends JDialog {
         this.sidesIsWinnerInput = sidesIsWinnerInput;
     }
 
-    public JButton getOkBtn() {
-        return okBtn;
+    public JTextField getSidesIdWarInput() {
+        return sidesIdWarInput;
     }
 
-    public void setOkBtn(JButton okBtn) {
-        this.okBtn = okBtn;
-    }
-
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
+    public void setSidesIdWarInput(JTextField sidesIdWarInput) {
+        this.sidesIdWarInput = sidesIdWarInput;
     }
 }

@@ -36,7 +36,7 @@ public class EventHandler {
         JTextField endDate = wfd.getEndDateInput();
         JButton okBtn = wfd.getOkWarBtn();
 
-        okBtn.addActionListener(new CreateWarEvent(name, startDate, endDate));
+        okBtn.addActionListener(new CreateWarEvent(name, startDate, endDate, wfd));
 
     }
 
@@ -47,7 +47,7 @@ public class EventHandler {
         JTextField endDate = wfd.getEndDateInput();
         JButton okBtn = wfd.getOkWarBtn();
 
-        okBtn.addActionListener(new UpdateWarEvent(name, startDate, endDate, id));
+        okBtn.addActionListener(new UpdateWarEvent(name, startDate, endDate, id, wfd));
 
     }
 
@@ -69,21 +69,25 @@ public class EventHandler {
 
     }
 
-    public static void AddEvent(SidesForm sidesF, int isWinner,int idWar){
+    public static void AddEvent(SidesForm sidesF){
 
         JTextField name = sidesF.getSidesInput();
+        JTextField isWinner = sidesF.getSidesIsWinnerInput();
+        JTextField idWar = sidesF.getSidesIdWarInput();
         JButton okBtn = sidesF.getOkBtn();
 
-        okBtn.addActionListener(new CreateSidesEvent(name,isWinner,idWar));
+        okBtn.addActionListener(new CreateSidesEvent(name,isWinner,idWar, sidesF));
 
     }
 
-    public static void AddEvent(SidesForm sidesF, int id, int isWinner, int idWar){
+    public static void AddEvent(SidesForm sidesF, int id){
 
         JTextField name = sidesF.getSidesInput();
+        JTextField isWinner = sidesF.getSidesIsWinnerInput();
+        JTextField idWar = sidesF.getSidesIdWarInput();
         JButton okBtn = sidesF.getOkBtn();
 
-        okBtn.addActionListener(new CreateSidesEvent(name, id,idWar));
+        okBtn.addActionListener(new UpdateSidesEvent( id,name, isWinner,idWar, sidesF ));
 
     }
 }
