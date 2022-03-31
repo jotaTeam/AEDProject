@@ -2,6 +2,7 @@ package Controllers.Events;
 
 import Models.CountrySide;
 import Service.repositories.CountrySideRepository;
+import Views.IsSIde;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,13 +18,15 @@ public class UpdateCountryIsSideEvent implements ActionListener {
     private JTextField endDate;
     private JTextField idSide;
     private JTextField idCountry;
+    private IsSIde isSIde;
 
-    public UpdateCountryIsSideEvent(int id, JTextField startDate, JTextField endDate, JTextField idSide, JTextField idCountry) {
+    public UpdateCountryIsSideEvent(int id, JTextField startDate, JTextField endDate, JTextField idSide, JTextField idCountry, IsSIde isSIde) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
         this.idSide = idSide;
         this.idCountry = idCountry;
+        this.isSIde = isSIde;
     }
 
     @Override
@@ -36,6 +39,8 @@ public class UpdateCountryIsSideEvent implements ActionListener {
         CountrySideRepository cr = new CountrySideRepository();
 
         cr.update(countrySide);
+
+        isSIde.dispose();
 
     }
 }

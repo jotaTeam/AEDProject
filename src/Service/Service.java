@@ -65,7 +65,7 @@ public class Service {
 
     public int create(String table, String value1, String value2, String value3, String value4) {
 
-        String sql = "INSERT INTO guerritas." + table + " VALUES(null, '" + value1 + "', '" + value2 + "','" + value3 + ",'" + value4 + "');";
+        String sql = "INSERT INTO guerritas." + table + " VALUES(null, '" + value1 + "', '" + value2 + "','" + value3 + "','" + value4 + "');";
 
         int i = executeUpdate(sql);
 

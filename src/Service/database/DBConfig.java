@@ -4,7 +4,7 @@ import java.util.Properties;
 
 public class DBConfig {
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "root";
+    private static final String PASSWORD = "";
     private static final String TABLE = "guerritas";
     public static final String URL = "jdbc:mysql://localhost";
     private static final String PORT= "3306";

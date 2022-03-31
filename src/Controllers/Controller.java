@@ -73,19 +73,19 @@ public class Controller {
                     break;
                 case "pais":
                     CountryForm countries = new CountryForm(null, true);
-                    //TODO eventHandler
+                    EventHandler.AddEvent(countries);
                     countries.setVisible(true);
                     fillTable(table, content);
                     break;
                 case "bando_pais":
-                    IsSIde theSide = new IsSIde(null, true);
-                    //TODO enventhandler
-                    theSide.setVisible(true);
+                    IsSIde isSide = new IsSIde(null, true);
+                    EventHandler.AddEvent(isSide);
+                    isSide.setVisible(true);
                     fillTable(table, content);
                     break;
                 case "periodo_independencia":
                     PeriodIndependence independence = new PeriodIndependence(null, true);
-                    //TODO eventHandler
+                    EventHandler.AddEvent(independence);
                     independence.setVisible(true);
                     fillTable(table, content);
                     break;
@@ -114,21 +114,21 @@ public class Controller {
 
                 case "pais":
                     CountryForm countries = new CountryForm(null, true);
-                    //TODO eventHandler
+                    EventHandler.AddEvent(countries, id);
                     countries.setVisible(true);
                     fillTable(table, content);
                     break;
 
                 case "bando_pais":
-                    IsSIde theSide = new IsSIde(null, true);
-                    //TODO enventhandler
-                    theSide.setVisible(true);
+                    IsSIde isSide = new IsSIde(null, true);
+                    EventHandler.AddEvent(isSide, id);
+                    isSide.setVisible(true);
                     fillTable(table, content);
                     break;
 
                 case "periodo_independencia":
                     PeriodIndependence independence = new PeriodIndependence(null, true);
-                    //TODO eventHandler
+                    EventHandler.AddEvent(independence, id);
                     independence.setVisible(true);
                     fillTable(table, content);
                     break;

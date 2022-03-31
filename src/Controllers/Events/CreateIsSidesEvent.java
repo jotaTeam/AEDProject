@@ -4,6 +4,7 @@ package Controllers.Events;
 import Models.CountrySide;
 import Service.repositories.CountryRepository;
 import Service.repositories.CountrySideRepository;
+import Views.IsSIde;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,12 +16,14 @@ public class CreateIsSidesEvent implements  ActionListener{
     private JTextField endDate;
     private JTextField idSide;
     private JTextField idCountry;
+    private IsSIde isSide;
 
-    public CreateIsSidesEvent(JTextField startDate, JTextField endDate, JTextField idSide, JTextField idCountry) {
+    public CreateIsSidesEvent(JTextField startDate, JTextField endDate, JTextField idSide, JTextField idCountry, IsSIde isSide) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.idSide = idSide;
         this.idCountry = idCountry;
+        this.isSide = isSide;
     }
 
     @Override
@@ -33,5 +36,7 @@ public class CreateIsSidesEvent implements  ActionListener{
         CountrySideRepository cr = new CountrySideRepository();
 
         cr.create(countrySide);
+
+        isSide.dispose();
     }
 }

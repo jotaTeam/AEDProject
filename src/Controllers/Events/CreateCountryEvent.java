@@ -2,6 +2,7 @@ package Controllers.Events;
 
 import Models.Countries;
 import Service.repositories.CountryRepository;
+import Views.CountryForm;
 
 
 import javax.swing.*;
@@ -11,9 +12,11 @@ import java.awt.event.ActionListener;
 
 public class CreateCountryEvent implements ActionListener{
     private JTextField countryName;
+    private CountryForm cform;
 
-    public CreateCountryEvent(JTextField countryName) {
+    public CreateCountryEvent(JTextField countryName, CountryForm cform) {
         this.countryName = countryName;
+        this.cform = cform;
     }
 
     @Override
@@ -24,5 +27,7 @@ public class CreateCountryEvent implements ActionListener{
         CountryRepository countryRepo = new CountryRepository();
 
         countryRepo.create(countries);
+
+        cform.dispose();
     }
 }

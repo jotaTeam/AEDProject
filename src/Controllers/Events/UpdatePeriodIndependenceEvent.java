@@ -4,6 +4,7 @@ import Models.IndependencePeriod;
 import Models.Wars;
 import Service.repositories.IndependencePeriodRepository;
 import Service.repositories.WarsRepository;
+import Views.PeriodIndependence;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,12 +16,14 @@ public class UpdatePeriodIndependenceEvent implements ActionListener{
     private JTextField periodIndependenceEndInput;
     private JTextField perInIdPaisInput;
     private int id;
+    private PeriodIndependence pind;
 
-    public UpdatePeriodIndependenceEvent(int id,JTextField periodIndependenceStartInput, JTextField periodIndependenceEndInput, JTextField perInIdPaisInput) {
+    public UpdatePeriodIndependenceEvent(int id,JTextField periodIndependenceStartInput, JTextField periodIndependenceEndInput, JTextField perInIdPaisInput, PeriodIndependence pind) {
         this.periodIndependenceStartInput = periodIndependenceStartInput;
         this.periodIndependenceEndInput = periodIndependenceEndInput;
         this.perInIdPaisInput = perInIdPaisInput;
         this.id =id;
+        this.pind = pind;
 
     }
 
@@ -33,6 +36,8 @@ public class UpdatePeriodIndependenceEvent implements ActionListener{
         IndependencePeriodRepository indPeriodRepository = new IndependencePeriodRepository();
 
         indPeriodRepository.update(indPeriod);
+
+        pind.dispose();
 
     }
 
