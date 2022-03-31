@@ -86,4 +86,5 @@ public class EventHandler {
         okBtn.addActionListener(new CreateSidesEvent(name, id,idWar));
 
     }
+
 }
