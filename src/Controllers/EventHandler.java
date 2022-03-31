@@ -1,10 +1,7 @@
 package Controllers;
 
 import Controllers.Events.*;
-import Views.Content;
-import Views.Home;
-import Views.Menu;
-import Views.WarsFormDlg;
+import Views.*;
 
 import javax.swing.*;
 
@@ -51,6 +48,42 @@ public class EventHandler {
         JButton okBtn = wfd.getOkWarBtn();
 
         okBtn.addActionListener(new UpdateWarEvent(name, startDate, endDate, id));
+
+    }
+
+    public static void AddEvent(CountryForm countryF){
+
+        JTextField name = countryF.getCountryNameInput();
+        JButton okBtn = countryF.getOkBtn();
+
+        okBtn.addActionListener(new CreateCountryEvent(name));
+
+    }
+
+    public static void AddEvent(CountryForm countryF, int id){
+
+        JTextField name = countryF.getCountryNameInput();
+        JButton okBtn = countryF.getOkBtn();
+
+        okBtn.addActionListener(new UpdateCountryEvent(name, id));
+
+    }
+
+    public static void AddEvent(SidesForm sidesF, int isWinner,int idWar){
+
+        JTextField name = sidesF.getSidesInput();
+        JButton okBtn = sidesF.getOkBtn();
+
+        okBtn.addActionListener(new CreateSidesEvent(name,isWinner,idWar));
+
+    }
+
+    public static void AddEvent(SidesForm sidesF, int id, int isWinner, int idWar){
+
+        JTextField name = sidesF.getSidesInput();
+        JButton okBtn = sidesF.getOkBtn();
+
+        okBtn.addActionListener(new CreateSidesEvent(name, id,idWar));
 
     }
 }
